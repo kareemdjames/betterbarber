@@ -5,6 +5,7 @@ import SignIn from './components/SignIn'
 import './App.css';
 import UserDash from "./components/UserDash";
 import Search from "./components/Search";
+import Booking from './components/Booking';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,8 @@ class App extends Component {
             <Switch>
               <Route exact path='/' render={() => user ? <UserDash user={user}/> :  <SignIn />  }/>
                 <Route exact path='/search' component={Search}/>
+              <Route exact path='/bookings' component={Booking}/>
+
 
             </Switch>
           </div>
