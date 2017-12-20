@@ -6,6 +6,7 @@ import './App.css';
 import UserDash from "./components/UserDash";
 import Search from "./components/Search";
 import Booking from './components/Booking';
+import Favorite from './components/Favorite'
 
 class App extends Component {
   constructor(props) {
@@ -30,14 +31,11 @@ class App extends Component {
     return (
         <Router>
           <div>
-
-            {/*{!user && <SignIn />}*/}
-            {/*{user && <UserDash user={user}/>}*/}
             <Switch>
               <Route exact path='/' render={() => user ? <UserDash user={user}/> :  <SignIn />  }/>
                 <Route exact path='/search' component={Search}/>
               <Route exact path='/bookings' component={Booking}/>
-
+                <Route exact path='/favorites' component={Favorite}/>
 
             </Switch>
           </div>
