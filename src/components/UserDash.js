@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { auth } from '../firebase'
 import Map from './Map'
 import Navigation from './Nav'
-import { Container, Button, Section } from 'reactbulma'
+import { Container, Button, Section, Content, Title } from 'reactbulma'
 
 class UserDash extends Component {
 
@@ -20,7 +21,9 @@ class UserDash extends Component {
             <div>
                 <Navigation />
                 <Section style={{paddingTop:20}}>
-                    <h1>Welcome {user.displayName}</h1>
+                    <Content>
+                        <Title is='3'>Welcome {user.displayName}</Title>
+                    </Content>
                     <Container fluid style={{height: 300}}>
                         <Map
                             onMapReady={map => {
@@ -46,6 +49,10 @@ class UserDash extends Component {
                                 Favorites
                             </Button>
                         </Link>
+                        <br/>
+                        <Button onClick={() => auth.signOut()} danger large fullwidth>
+                            Sign Out
+                        </Button>
                     </Section>
                 </Section>
             </div>

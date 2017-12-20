@@ -6,7 +6,8 @@ import './App.css';
 import UserDash from "./components/UserDash";
 import Search from "./components/Search";
 import Booking from './components/Booking';
-import Favorite from './components/Favorite'
+import Favorite from './components/Favorite';
+import Setting from './components/Setting';
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
                 <Route exact path='/search' component={Search}/>
               <Route exact path='/bookings' component={Booking}/>
                 <Route exact path='/favorites' component={Favorite}/>
-
+              <Route exact path='/settings' component={Setting}/>
             </Switch>
           </div>
         </Router>
