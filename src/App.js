@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { auth, database } from "./firebase";
 import SignIn from './components/SignIn'
 import './App.css';
 import UserDash from "./components/UserDash";
+import Search from "./components/Search";
 
 class App extends Component {
   constructor(props) {
@@ -28,8 +29,14 @@ class App extends Component {
     return (
         <Router>
           <div>
-            {!user && <SignIn />}
-            {user && <UserDash user={user}/>}
+
+            {/*{!user && <SignIn />}*/}
+            {/*{user && <UserDash user={user}/>}*/}
+            <Switch>
+              <Route exact path='/' render={() => user ? <UserDash user={user}/> :  <SignIn />  }/>
+                <Route exact path='/search' component={Search}/>
+
+            </Switch>
           </div>
         </Router>
     );

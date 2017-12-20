@@ -17,7 +17,7 @@ function Navigation () {
                     <Tabs centered>
                         <Container>
                             <ul>
-                                <Link to='/home'>
+                                <Link to='/'>
                                     <li className="active">Home</li>
                                 </Link>
                                 <Link to='/search'>
