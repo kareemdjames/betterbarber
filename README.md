@@ -20,3 +20,4 @@
 * Firebase (Database)
 * Google Places API - to scrape barbershops
 * Material Design
+* Responsive Design
